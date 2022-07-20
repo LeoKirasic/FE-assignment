@@ -1,3 +1,4 @@
+import uniqid from 'uniqid';
 let data = JSON.parse(localStorage.getItem('data')) || [];
   createDomElements(id) {
     this.ime = document.createElement('li');
