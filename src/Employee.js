@@ -102,4 +102,27 @@ class Employee {
     });
   }
 
+  update(event) {
+    const id = event.target.getAttribute('data-id');
+    const editIme = document.querySelector('.edit-ime').value;
+    const editPrezime = document.querySelector('.edit-prezime').value;
+    const editEmail = document.querySelector('.edit-email').value;
+    const editAdresa = document.querySelector('.edit-adresa').value;
+    const editBrojMobitela = document.querySelector('.edit-broj-mobitela').value;
+
+    data = data.map((item) => {
+      if (item.id === id) {
+        item.ime = editIme;
+        item.prezime = editPrezime;
+        item.email = editEmail;
+        item.adresa = editAdresa;
+        item.brojMobitela = editBrojMobitela;
+      }
+      return item;
+    });
+    document.querySelector('.edit-popup').classList.remove('show');
+    document.querySelector('.edit-popup').classList.add('hide');
+    localStorage.setItem('data', JSON.stringify(data));
+    this.render();
+  }
 }
