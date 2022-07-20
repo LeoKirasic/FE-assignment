@@ -126,3 +126,5 @@ class Employee {
     this.render();
   }
 }
+
+export default Employee;
