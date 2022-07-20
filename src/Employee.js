@@ -1,5 +1,7 @@
 import uniqid from 'uniqid';
+
 let data = JSON.parse(localStorage.getItem('data')) || [];
+
 class Employee {
   constructor() {
     const self = this;
@@ -17,12 +19,13 @@ class Employee {
       if (event.target.classList.contains('btn-delete')) {
         self.remove(event);
         localStorage.setItem('data', JSON.stringify(data));
-  }
+      }
       if (event.target.classList.contains('btn-edit')) {
         Employee.renderEditForm(event);
       }
     });
   }
+
   render() {
     this.items.innerHTML = '';
 
@@ -46,6 +49,7 @@ class Employee {
       this.items.appendChild(list);
     });
   }
+
   createDomElements(id) {
     this.ime = document.createElement('li');
     this.prezime = document.createElement('li');
