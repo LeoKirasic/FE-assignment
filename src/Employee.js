@@ -1,3 +1,4 @@
+let data = JSON.parse(localStorage.getItem('data')) || [];
   createDomElements(id) {
     this.ime = document.createElement('li');
     this.prezime = document.createElement('li');
