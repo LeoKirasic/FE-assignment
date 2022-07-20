@@ -71,4 +71,35 @@ class Employee {
     document.querySelector('.items').value = '';
     this.render();
   }
+
+  remove(event) {
+    const id = event.target.getAttribute('data-id');
+
+    data = data.filter((item) => {
+      if (item.id !== id) {
+        return item;
+      }
+      return 0;
+    });
+    this.render();
+  }
+
+  static renderEditForm(event) {
+    const id = event.target.getAttribute('data-id');
+
+    document.querySelector('.edit-popup').classList.remove('hide');
+    document.querySelector('.edit-popup').classList.add('show');
+    document.querySelector('.btn-update').setAttribute('data-id', id);
+
+    data.forEach((item) => {
+      if (item.id === id) {
+        document.querySelector('.edit-ime').value = item.ime;
+        document.querySelector('.edit-prezime').value = item.prezime;
+        document.querySelector('.edit-email').value = item.email;
+        document.querySelector('.edit-adresa').value = item.adresa;
+        document.querySelector('.edit-broj-mobitela').value = item.brojMobitela;
+      }
+    });
+  }
+
 }
