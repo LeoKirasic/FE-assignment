@@ -1,5 +1,8 @@
 import uniqid from 'uniqid';
 let data = JSON.parse(localStorage.getItem('data')) || [];
+class Employee {
+  constructor() {
+  }
   createDomElements(id) {
     this.ime = document.createElement('li');
     this.prezime = document.createElement('li');
