@@ -2,6 +2,31 @@ import uniqid from 'uniqid';
 let data = JSON.parse(localStorage.getItem('data')) || [];
 class Employee {
   constructor() {
+    this.items = document.querySelector('.items');
+    this.render();
+  }
+  render() {
+    this.items.innerHTML = '';
+
+    data.forEach((item) => {
+      const list = document.createElement('ul');
+      list.classList.add('list');
+
+      this.createDomElements(item.id);
+      this.ime.insertAdjacentHTML('afterbegin', item.ime);
+      this.prezime.insertAdjacentHTML('afterbegin', item.prezime);
+      this.email.insertAdjacentHTML('afterbegin', item.email);
+      this.adresa.insertAdjacentHTML('afterbegin', item.adresa);
+      this.brojMobitela.insertAdjacentHTML('afterbegin', item.brojMobitela);
+
+      list.appendChild(this.ime);
+      list.appendChild(this.prezime);
+      list.appendChild(this.email);
+      list.appendChild(this.adresa);
+      list.appendChild(this.brojMobitela);
+
+      this.items.appendChild(list);
+    });
   }
   createDomElements(id) {
     this.ime = document.createElement('li');
