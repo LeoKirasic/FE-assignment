@@ -4,9 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>mStart</title>
   </head>
   <body>
+    <header class="header">mStart</header>
+    <div class="edit-popup hide">
+      <input type="text" name="" class="edit-ime" />
+      <input type="text" name="" class="edit-prezime" />
+      <input type="email" name="" class="edit-email" />
+      <input type="text" name="" class="edit-adresa" />
+      <input type="text" name="" class="edit-broj-mobitela" />
+      <button class="btn-update">Update</button>
+    </div>
+    <form>
+      <input class="ime item" type="text" placeholder="ime" required />
+      <input class="prezime item" type="text" placeholder="prezime" required />
+      <input
+        class="email item"
+        type="email"
+        name=""
+        id=""
+        placeholder="email"
+        required
+      />
+      <input class="adresa item" type="text" placeholder="adresa" required />
+      <input
+        class="broj-mobitela item"
+        type="tel"
+        name=""
+        id=""
+        placeholder="broj mobitela"
+        required
+      />
+      <button class="add-button" type="submit">Submit</button>
+    </form>
+    <div class="items">
+      <ul class="list-items"></ul>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
