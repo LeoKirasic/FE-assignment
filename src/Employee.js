@@ -2,8 +2,26 @@ import uniqid from 'uniqid';
 let data = JSON.parse(localStorage.getItem('data')) || [];
 class Employee {
   constructor() {
+    const self = this;
     this.items = document.querySelector('.items');
     this.render();
+
+    document
+      .querySelector('.add-button')
+      .addEventListener('click', this.create.bind(this));
+    document
+      .querySelector('.btn-update')
+      .addEventListener('click', this.update.bind(this));
+
+    document.addEventListener('click', (event) => {
+      if (event.target.classList.contains('btn-delete')) {
+        self.remove(event);
+        localStorage.setItem('data', JSON.stringify(data));
+  }
+      if (event.target.classList.contains('btn-edit')) {
+        Employee.renderEditForm(event);
+      }
+    });
   }
   render() {
     this.items.innerHTML = '';
