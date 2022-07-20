@@ -25,3 +25,5 @@ class Employee {
     this.brojMobitela.appendChild(this.delete);
     this.brojMobitela.appendChild(this.edit);
   }
+
+}
