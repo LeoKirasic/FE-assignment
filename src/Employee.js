@@ -51,4 +51,24 @@ class Employee {
     this.brojMobitela.appendChild(this.edit);
   }
 
+  create() {
+    const ime = document.querySelector('.ime').value;
+    const prezime = document.querySelector('.prezime').value;
+    const email = document.querySelector('.email').value;
+    const adresa = document.querySelector('.adresa').value;
+    const brojMobitela = document.querySelector('.broj-mobitela').value;
+
+    const newItem = {
+      id: uniqid(),
+      ime,
+      prezime,
+      email,
+      adresa,
+      brojMobitela,
+    };
+    data.push(newItem);
+    localStorage.setItem('data', JSON.stringify(data));
+    document.querySelector('.items').value = '';
+    this.render();
+  }
 }
