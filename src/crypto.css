@@ -1,0 +1,29 @@
+body {
+  background-color: #424242;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+a {
+  color: white;
+}
+table,
+th,
+td {
+  border: 1px solid;
+}
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+.negative {
+  background-color: red;
+}
+.positive {
+  background-color: green;
+}
