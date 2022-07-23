@@ -55,3 +55,13 @@ const fetchAPIData = async () => {
 
   return data.data;
 };
+function init() {
+  return Promise.all([getUSDExchangeRate(), fetchAPIData()]).then((values) => {
+    exchangeRate = parseFloat(values[0]);
+    populateCryptoTable(values[1]);
+    [exchangeRate, previousData] = values;
+    console.log(previousData);
+  });
+}
+init();
+setInterval(init, 5000);
