@@ -1,4 +1,4 @@
 import Employee from './Employee';
-import './style.css';
+import './index.css';
 
 const employee = new Employee();
