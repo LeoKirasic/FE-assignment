@@ -1,3 +1,4 @@
+require('./crypto.css');
 const getUSDExchangeRate = async () => {
   const response = await fetch('https://stormy-spire-77504.herokuapp.com/https://api.hnb.hr/tecajn/v1?valuta=USD&format=json', { mode: 'cors' });
   const data = await response.json();
