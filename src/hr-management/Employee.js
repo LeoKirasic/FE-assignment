@@ -133,14 +133,15 @@ class Employee {
     const editBrojMobitela = document.querySelector('.edit-broj-mobitela').value;
 
     data = data.map((item) => {
+      const newItem = item;
       if (item.id === id) {
-        item.ime = editIme;
-        item.prezime = editPrezime;
-        item.email = editEmail;
-        item.adresa = editAdresa;
-        item.brojMobitela = editBrojMobitela;
+        newItem.ime = editIme;
+        newItem.prezime = editPrezime;
+        newItem.email = editEmail;
+        newItem.adresa = editAdresa;
+        newItem.brojMobitela = editBrojMobitela;
       }
-      return item;
+      return newItem;
     });
     document.querySelector('.edit-popup').classList.remove('show');
     document.querySelector('.edit-popup').classList.add('hide');
