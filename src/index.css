@@ -69,3 +69,13 @@ body {
 a {
   color: white;
 }
+nav ul {
+  display: flex;
+  gap: 10px;
+  margin-right: 35px;
+}
+nav li {
+  list-style-type: none;
+  font-size: larger;
+  font-weight: bold;
+}
