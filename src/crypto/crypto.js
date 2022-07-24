@@ -14,11 +14,11 @@ const populateCryptoTable = (data) => {
   for (let i = 1; i < cryptoTable.rows.length;) {
     cryptoTable.deleteRow(i);
   }
-  function addCell(tr, text) {
+  const addCell = (tr, text) => {
     const td = tr.insertCell();
     td.textContent = text;
     return td;
-  }
+  };
 
   const changeRowStyle = (id, style) => {
     const row = document.querySelector(id);
@@ -56,13 +56,11 @@ const fetchAPIData = async () => {
 
   return data.data;
 };
-function init() {
-  return Promise.all([getUSDExchangeRate(), fetchAPIData()]).then((values) => {
-    exchangeRate = values[0].replace(/,/g, '.');
-    document.querySelector('.exchange').textContent = `1 USD = ${exchangeRate} HRK`;
-    populateCryptoTable(values[1]);
-    [exchangeRate, previousData] = values;
-  });
-}
+const init = async () => Promise.all([getUSDExchangeRate(), fetchAPIData()]).then((values) => {
+  exchangeRate = values[0].replace(/,/g, '.');
+  document.querySelector('.exchange').textContent = `1 USD = ${exchangeRate} HRK`;
+  populateCryptoTable(values[1]);
+  [exchangeRate, previousData] = values;
+});
 init();
 setInterval(init, 5000);
