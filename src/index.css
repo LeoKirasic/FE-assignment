@@ -121,3 +121,7 @@ button {
 .edit-popup button {
   margin-left: 0px;
 }
+
+.hr-header {
+  color: #3498db;
+}
