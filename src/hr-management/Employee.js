@@ -73,13 +73,20 @@ class Employee {
     this.brojMobitela.appendChild(this.edit);
   }
 
+  // This function will returns false if the inputs are empty, but the disable-next-line expects
+  // the other part of the function to return something as well. This is intended behavior which
+  // is why I have disabled this rule here.
+
+  // eslint-disable-next-line consistent-return
   create() {
     const ime = document.querySelector('.ime').value;
     const prezime = document.querySelector('.prezime').value;
     const email = document.querySelector('.email').value;
     const adresa = document.querySelector('.adresa').value;
     const brojMobitela = document.querySelector('.broj-mobitela').value;
-
+    if (ime === '' || prezime === '' || email === '' || adresa === '' || brojMobitela === '') {
+      return false;
+    }
     const newItem = {
       id: uniqid(),
       ime,
