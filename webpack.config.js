@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './src/index.js',
-    crypto: './src/crypto.js',
+    index: './src/hr-management/index.js',
+    crypto: './src/crypto/crypto.js',
   },
   devtool: 'inline-source-map',
   output: {
@@ -22,12 +22,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/index.html',
+      template: 'src/hr-management/index.html',
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
       filename: 'crypto.html',
-      template: 'src/crypto.html',
+      template: 'src/crypto/crypto.html',
       chunks: ['exampleEntry'],
     })],
 };
