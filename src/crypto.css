@@ -14,10 +14,8 @@ tr.positive {
 a {
   color: white;
 }
-table,
-th,
-td {
-  border: 1px solid;
+tr {
+  background-color: #34495e;
 }
 table {
   border-collapse: collapse;
