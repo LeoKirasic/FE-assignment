@@ -28,6 +28,7 @@ td {
 th {
   background-color: #1b2530;
 }
-.positive {
-  background-color: green;
+.crypto-header {
+  color: #3498db;
+}
 }
