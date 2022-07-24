@@ -99,3 +99,6 @@ input::placeholder {
 input:focus {
   border: 1.5px solid #3498db;
 }
+form {
+  padding-right: 25px;
+}
