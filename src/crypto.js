@@ -59,6 +59,7 @@ const fetchAPIData = async () => {
 function init() {
   return Promise.all([getUSDExchangeRate(), fetchAPIData()]).then((values) => {
     exchangeRate = values[0].replace(/,/g, '.');
+    document.querySelector('.exchange').textContent = `1 USD = ${exchangeRate} HRK`;
     populateCryptoTable(values[1]);
     [exchangeRate, previousData] = values;
     console.log(previousData);
