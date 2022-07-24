@@ -8,6 +8,12 @@ const getUSDExchangeRate = async () => {
   const data = await response.json();
   return data[0]['Srednji za devize'];
 };
+const fetchAPIData = async () => {
+  const response = await fetch('https://api.coincap.io/v2/assets?limit=10');
+  const data = await response.json();
+
+  return data.data;
+};
 const populateCryptoTable = (data) => {
   const cryptoTable = document.querySelector('.crypto-table');
 
@@ -50,12 +56,6 @@ const populateCryptoTable = (data) => {
   updateRow();
 };
 
-const fetchAPIData = async () => {
-  const response = await fetch('https://api.coincap.io/v2/assets?limit=10');
-  const data = await response.json();
-
-  return data.data;
-};
 const init = async () => Promise.all([getUSDExchangeRate(), fetchAPIData()]).then((values) => {
   exchangeRate = values[0].replace(/,/g, '.');
   document.querySelector('.exchange').textContent = `1 USD = ${exchangeRate} HRK`;
