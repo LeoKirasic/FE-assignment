@@ -31,4 +31,13 @@ th {
 .crypto-header {
   color: #3498db;
 }
+ul {
+  display: flex;
+  gap: 10px;
+  margin-right: 35px;
+}
+li {
+  list-style-type: none;
+  font-size: larger;
+  font-weight: bold;
 }
