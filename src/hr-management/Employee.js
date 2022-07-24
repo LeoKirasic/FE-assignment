@@ -12,15 +12,15 @@ class Employee {
       .querySelector('.add-button')
       .addEventListener('click', this.create.bind(this));
     document
-      .querySelector('.btn-update')
+      .querySelector('.button-update')
       .addEventListener('click', this.update.bind(this));
 
     document.addEventListener('click', (event) => {
-      if (event.target.classList.contains('btn-delete')) {
+      if (event.target.classList.contains('button-delete')) {
         self.remove(event);
         localStorage.setItem('data', JSON.stringify(data));
       }
-      if (event.target.classList.contains('btn-edit')) {
+      if (event.target.classList.contains('button-edit')) {
         Employee.renderEditForm(event);
       }
     });
@@ -60,8 +60,8 @@ class Employee {
     this.edit = document.createElement('button');
     this.delete = document.createElement('button');
 
-    this.edit.classList.add('btn-edit');
-    this.delete.classList.add('btn-delete');
+    this.edit.classList.add('button-edit');
+    this.delete.classList.add('button-delete');
 
     this.delete.setAttribute('data-id', id);
     this.edit.setAttribute('data-id', id);
@@ -118,7 +118,7 @@ class Employee {
 
     document.querySelector('.edit-popup').classList.remove('hide');
     document.querySelector('.edit-popup').classList.add('show');
-    document.querySelector('.btn-update').setAttribute('data-id', id);
+    document.querySelector('.button-update').setAttribute('data-id', id);
 
     data.forEach((item) => {
       if (item.id === id) {
