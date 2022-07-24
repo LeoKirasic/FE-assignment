@@ -63,4 +63,4 @@ const init = async () => Promise.all([getUSDExchangeRate(), fetchAPIData()]).the
   [exchangeRate, previousData] = values;
 });
 init();
-setInterval(init, 5000);
+setInterval(init, 20000);
