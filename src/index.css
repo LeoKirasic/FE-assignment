@@ -79,3 +79,8 @@ nav li {
   font-size: larger;
   font-weight: bold;
 }
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
