@@ -125,3 +125,7 @@ button {
 .hr-header {
   color: #3498db;
 }
+
+.items {
+  width: 800px;
+}
