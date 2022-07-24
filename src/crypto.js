@@ -62,7 +62,6 @@ function init() {
     document.querySelector('.exchange').textContent = `1 USD = ${exchangeRate} HRK`;
     populateCryptoTable(values[1]);
     [exchangeRate, previousData] = values;
-    console.log(previousData);
   });
 }
 init();
